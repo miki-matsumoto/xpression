@@ -84,6 +84,7 @@ header {
 .download-cta {
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 280px;
   height: 64px;
   border-radius: 32px;
