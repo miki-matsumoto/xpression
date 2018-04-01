@@ -17,6 +17,34 @@ body, h1, h2, p {
   margin: 0;
 }
 
+header {
+  margin: 24px 140px;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0;
+  list-style: none;
+}
+
+.social-icons li {
+  margin-right: 26px;
+}
+
+.facebook:before {
+  content: url(/assets/ic-fb.svg)
+}
+
+.twitter:before {
+  content: url(/assets/ic-twitter.svg)
+}
+
+.instagram:before {
+  content: url(/assets/ic-insta.svg)
+}
+
 .content {
   display: flex;
   height: 90%;
