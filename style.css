@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
   font-family: 'Fira Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
   height: 100%;
 }
 
@@ -8,6 +9,11 @@ body {
   height: 100%;
   background: #2c3134;
   background-image: url(/assets/bg-red@2x.png), url(/assets/bg-blue@2x.png);
+  /* background-image: -webkit-image-set(url(/assets/bg-red@2x.png) 2x,
+                                      url(/assets/bg-red.png) 1x,
+                                      url(/assets/bg-blue@2x.png) 2x,
+                                      url(/assets/bg-blue.png) 1x
+                                      ); */
   background-position: left top, right bottom;
   background-repeat: no-repeat;
   background-size: 862px 296px, 753px 735px;
@@ -111,6 +117,10 @@ header {
 }
 
 .movie {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 73px;
   width: 313px;
   height: 612px;
   background-image: url(/assets/iphone@2x.png);
@@ -153,7 +163,9 @@ footer {
 
 @media only screen and (max-width: 600px) {
   body {
-    background-image: none;
+    background-image: url(/assets/bg-red@2x.png);
+    background-position: top, bottom;
+    background-size: 100% 154px;
   }
 
   header {
@@ -172,6 +184,7 @@ footer {
   }
 
   .content {
+    margin-top: 104px;
     flex-direction: column;
   }
 
@@ -187,7 +200,7 @@ footer {
   }
 
   .movie {
-    margin-bottom: 64px;
+    margin: 0 0 64px 0;
   }
 
   footer {
