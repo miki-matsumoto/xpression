@@ -102,7 +102,7 @@ header {
   border: 0;
   cursor: pointer;
   transform: translateY(0);
-  transition: all 240ms linear;
+  transition: all 120ms linear;
   transition-property: transform, box-shadow;
 }
 
@@ -112,8 +112,8 @@ header {
 }
 
 .download-cta:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 3px 40px 0 rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
+  box-shadow: 0 3px 40px 0 rgba(0, 0, 0, 0.8);
 }
 
 .movie {
@@ -131,6 +131,7 @@ header {
 .download-cta .app-store {
   display: block;
   font-size: 24px;
+  font-weight: 600;
 }
 
 footer {
