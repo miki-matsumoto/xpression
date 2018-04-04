@@ -8,16 +8,37 @@ html {
 body {
   height: 100%;
   background: #2c3134;
-  background-image: url(/assets/bg-red@2x.png), url(/assets/bg-blue@2x.png);
-  /* background-image: -webkit-image-set(url(/assets/bg-red@2x.png) 2x,
-                                      url(/assets/bg-red.png) 1x,
-                                      url(/assets/bg-blue@2x.png) 2x,
-                                      url(/assets/bg-blue.png) 1x
-                                      ); */
-  background-position: left top, right bottom;
-  background-repeat: no-repeat;
-  background-size: 862px 296px, 753px 735px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
+
+body:before {
+  position: absolute;
+  content: ' ';
+  display: block;
+  width: 862px;
+  height: 296px;
+  background-image: -webkit-image-set(url(/assets/bg-red@2x.png) 2x, url(/assets/bg-red.png) 1x);
+  background-position: left top;
+  background-repeat: no-repeat;
+  background-size: 862px 296px;
+}
+/* 753px 735px; */
+body:after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  content: ' ';
+  display: block;
+  width: 735px;
+  height: 735px;
+  background-image: -webkit-image-set(url(/assets/bg-blue@2x.png) 2x, url(/assets/bg-blue.png) 1x);
+  background-position: right bottom;
+  background-repeat: no-repeat;
+  background-size: 735px 735px;
+}
+
 
 body, h1, h2, p {
   margin: 0;
@@ -54,6 +75,7 @@ header {
 }
 
 .content {
+  z-index: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,6 +83,7 @@ header {
 }
 
 .container, footer {
+  z-index: 1;
   color: #fff;
 }
 
@@ -135,10 +158,11 @@ header {
 }
 
 footer {
+  flex: 2;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin: 0 140px;
+  margin: 16px 140px;
 }
 
 .footer-company-info {
@@ -162,11 +186,20 @@ footer {
   color: #fff;
 }
 
-@media only screen and (max-width: 600px) {
-  body {
-    background-image: url(/assets/bg-red@2x.png);
-    background-position: top, bottom;
+@media only screen and (max-width: 768px) {
+  body:before {
+    width: 100%;
+    height: 154px;
     background-size: 100% 154px;
+  }
+
+  body:after {
+    content: '';
+    position: absolute;
+    top: 472px;
+    display: block;
+    background-image: -webkit-image-set(url(/assets/sp-blue-bg@2x.png) 2x, url(/assets/sp-blue-bg.png) 1x);
+    background-size: 227px 748px;
   }
 
   header {
@@ -185,6 +218,7 @@ footer {
   }
 
   .content {
+    display: block;
     margin-top: 104px;
     flex-direction: column;
   }
@@ -201,14 +235,13 @@ footer {
   }
 
   .movie {
-    margin: 0 0 64px 0;
+    margin: 0 auto;
   }
 
   footer {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
+    display: block;
+    margin: 64px 0 0 0;
+    text-align: center;
   }
 
   .footer-company-info {
