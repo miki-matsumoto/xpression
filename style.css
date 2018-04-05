@@ -74,6 +74,11 @@ header {
   content: url(/assets/ic-insta.svg)
 }
 
+.xpression {
+  width: 246px;
+  height: 56px;
+}
+
 .content {
   z-index: 1;
   display: flex;
@@ -206,6 +211,11 @@ footer {
 
   header {
     margin: 0;
+  }
+
+  .xpression {
+    width: 177px;
+    height: 40px;
   }
 
   .container {
